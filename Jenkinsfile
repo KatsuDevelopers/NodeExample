@@ -31,6 +31,16 @@ pipeline{
                withSonarQubeEnv('sonarqube')
                 sh "$SCANNER_HOME/bin/sonar-scanner"
             }
+            post{
+                always{
+                    echo "Done"
+                }
+                success{
+                    echo "Prep Successfuls"
+                }
+                failure{
+                    echo "you failed"
+                }
         }
     }
     post{
