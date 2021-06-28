@@ -41,6 +41,7 @@ pipeline{
                 failure{
                     echo "you failed"
                 }
+            }
         }
     }
     post{
