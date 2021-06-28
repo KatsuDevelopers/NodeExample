@@ -21,17 +21,17 @@ pipeline{
                 }
             }
         }
-        stage("sonarqube")
-        {
+        stage("sonarqube"){
             environment{
                 SCANNER_HOME = tool 'SonarQubeScanner'
                 PROJECT_NAME = 'sonarqube'
             }
             steps{
-               withSonarQubeEnv('sonarqube')
+                withSonarQubeEnv('sonarqube'){
                 sh "$SCANNER_HOME/bin/sonar-scanner"
+                }
             }
-            post{
+             post{
                 always{
                     echo "Done"
                 }
@@ -43,7 +43,6 @@ pipeline{
                 }
             }
         }
-    }
     post{
         always{
             echo "========always========"
