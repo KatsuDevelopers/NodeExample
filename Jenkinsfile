@@ -7,7 +7,7 @@ pipeline{
                 label "jenkins-slave-1"
             }   
             steps{
-                sh "ls"
+                sh "npm -v"
             }
             post{
                 always{
