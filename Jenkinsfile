@@ -21,6 +21,17 @@ pipeline{
                 }
             }
         }
+        stage("sonarqube")
+        {
+            environment{
+                SCANNER_HOME = tool 'SonarQubeScanner'
+                PROJECT_NAME = 'sonarqube'
+            }
+            steps{
+               withSonarQubeEnv('sonarqube')
+                sh "${SCANNER_HOME}/bin/sonar-scanner"
+            }
+        }
     }
     post{
         always{
