@@ -29,7 +29,7 @@ pipeline{
             }
             post{
                 always{
-                    echo "Done"
+                    echo "Doneish"
                 }
                 success{
                     echo "Prep Successfuls"
