@@ -14,7 +14,7 @@ pipeline{
                     echo "Done"
                 }
                 success{
-                    echo "Prep Successful"
+                    echo "Prep Successfuls"
                 }
                 failure{
                     echo "you failed"
