@@ -1,7 +1,10 @@
 pipeline{
-    agent any
+    agent none
     
     stages{
+        agent {
+            label "jenkins-slave-1"
+        }   
         stage("Preperation"){
             steps{
                 sh "npm -v"
