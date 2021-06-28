@@ -27,9 +27,10 @@ pipeline{
                     def scannerHome = tool 'sonarqube';
                     withSonarQubeEnv('sonarqube'){
                         sh "${tool("sonarqube")}/bin/sonar-scanner -Dsonar.projectKey=sonarqube -Dsonar.sources=. -Dsonar.login=admin -Dsonar.password=abcd@1234 -Dsonar.host.url=http://46.101.48.57/sonar"
+                    }
                 }
             }
-             post{
+            post{
                 always{
                     echo "Done"
                 }
